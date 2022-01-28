@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+  }
+
+.box-log {
+	width:  300px;
+	border: 1px;
+	background: transparent;
+	margin:15% auto;
+}
+.title{
+	background: #fc3535;
+	color: #fff
+}
+
+
+
+h3{
+	font-style:italic ;
+	color: whitesmoke;
+	font-family: HoloLens MDL2 Assets;
+	font-size: 40px;
+}
+
+.khusus{
+	margin : auto;
+}
+
+.kanan {
+	float : right;
+}
+
+.submit{
+	padding: 10px;
+	background: #fff;
+	color: black;
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
+.submit:hover{
+	background: black;
+	color: #fff;
+}
+.content {
+	margin: 5% auto;
+}
+.content a{
+	text-decoration: none;
+}
+.kotak{
+	margin: auto;
+	width: 90%;}
+.input{
+	height: 30px;
+	border: 1px;
+	width : 162.5;
+}
+
+.body-login{
+	background-image: url(../img/2.gif);
+	background-size: 90%;
+	margin-top: 100px;
+
+}
+
+.body-main{
+	background-image: url(../img/2.gif);
+	background-size: 100%;
+
+
+}
+
+
