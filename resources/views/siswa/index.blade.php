@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <title>tes</title>
-    </head>
-    <body>
-        <div class="container">
+@extends('layouts.master')
+
+@section('content')
+            @if(session('success'))
+                <div class="alert alert-primary" role="alert">
+                    {{session('success')}}. <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+                </div>
+            @endif
+
             <div class="row">
                 <div class="col-6">
-                    <h1 align="center">Table Siswa</h1>
+                    <h1 float="start">Table Siswa</h1>
                 </div>
                 <div class="col-6">
                     <button type="button" class="btn btn-dark btn-sm float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -24,6 +25,7 @@
                             <td>Jenis Kelamin</td>
                             <td>Agama</td>
                             <td>Alamat</td>
+                            <td>Action</td>
                         </tr>
                         @foreach ($data_siswa as $siswa)
                         <tr>
@@ -33,6 +35,8 @@
                             <td>{{$siswa->jenis_kelamin}}</td>
                             <td>{{$siswa->agama}}</td>
                             <td>{{$siswa->alamat}}</td>
+                            <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning"> Edit </a>  |
+                                <a href="/siswa/{{$siswa->id}}/delete" class="btn btn-danger"> Hapus</td>
 
                         </tr>
                         @endforeach
@@ -48,45 +52,50 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                    <form>
+                                    <form action="/siswa/create" method="POST">
+                                        {{ csrf_field() }}
                                         <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Nama Depan</label>
-                                        <input type="nama_depan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Depan" required>
+                                        <label for="nama_depan" class="form-label">Nama Depan</label>
+                                        <input name="nama_depan" type="text" class="form-control" id="nama_depan" aria-describedby="nmdpn" placeholder="Nama Depan" required>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Nama Belakang</label>
-                                            <input type="nama_belakang" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Belakang" required>
+                                            <label for="nama_belakang" class="form-label">Nama Belakang</label>
+                                            <input name="nama_belakang" type="text" class="form-control" id="nama_belakang" aria-describedby="nmblkng" placeholder="Nama Belakang" required>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
-                                            <input type="jenis_kelamin" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jenis Kelamin" required>
+                                            <label for="Alamat" class="form-label">Alamat</label>
+                                            <input name="alamat" type="text" class="form-control" id="alamat" aria-describedby="emailHelp" placeholder="Alamat" required>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Agama</label>
-                                            <input type="agama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama" required>
+                                            <select name="jenis_kelamin" class="form-select" aria-label="Default select example" required id="jenis_kelamin">
+                                                <option selected>Jenis Kelamin</option>
+                                                <option value="L">Laki-Laki</option>
+                                                <option value="P">Perempuan</option>
+                                              </select>
                                         </div>
-
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Alamat</label>
-                                            <input type="alamat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alamat" required>
+                                            <select name="agama" class="form-select" aria-label="Default select example" required id="agama">
+                                                <option selected>Agama</option>
+                                                <option value="Islam">Islam</option>
+                                                <option value="Katholik">Kristen Katholik</option>
+                                                <option value="Kristen protestan">Kristen Protestan</option>
+                                                <option value="Hindu">Hindu</option>
+                                                <option value="Buddha">Buddha</option>
+                                                <option value="Konghucu">Kong hu cu</option>
+                                              </select>
                                         </div>
-
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
                                     </form>
                             </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+
                           </div>
                         </div>
-                      </div>
-                </div>
+                    </div>
 
-
-        <script src="js/bootstrap.bundle.min.js"></script>
-    </body>
-</html>
+@endsection
