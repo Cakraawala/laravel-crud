@@ -13,14 +13,14 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <div class="container-fluid">
-              <a class="container navbar-brand" href="index">Data Siswa</a>
+              <a class="container navbar-brand">Data Siswa</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active float-end" aria-current="page" href="siswa/index">Siswa</a>
+                    <a class="nav-link active float-end" aria-current="page"> <button data-bs-toggle="modal" data-bs-target="#exampleModal"class="btn btn-dark btn-sm float-end" >tambah data Siswa</button></a>
                   </li>
                 </ul>
               </div>

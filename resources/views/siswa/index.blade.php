@@ -12,9 +12,7 @@
                     <h1 float="start">Table Siswa</h1>
                 </div>
                 <div class="col-6">
-                    <button type="button" class="btn btn-dark btn-sm float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Tambah data siswa
-                      </button>
+
                 </div>
 
                 <table class="table table-hover table-dark table-striped">
